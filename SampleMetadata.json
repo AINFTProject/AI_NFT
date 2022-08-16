@@ -1,0 +1,54 @@
+{
+    "Name": "Squirrel Type Classifier",
+    "Description": "This model classifies the type of a squirrel for a given image.",
+    "Asset": "QmQpxqZ6hPnx8ofapPVgbg9JAh7S9oh3fNYvWwU7okdCU8",
+    "Domain": "Animals",
+    "Category": "Classification",
+    "NumberOfLayers": "5",
+    "Size": "1GB",
+    "Dataset": "Public Squirrel Dataset",
+    "DatasetSize": "400",
+    "Split": {
+        "Training": {
+            "Set": "240",
+            "Description": "The public squirrel dataset contains classes for 21 different squirrel types. Model trained using Stoachastic Gradient Descent(SGD) for 50 epochs on the training set, approximately took 1 day on xyz GPU. "
+        },
+        "Validation": {
+            "Set": "80",
+            "Description": " "
+        },
+        "Testing": {
+            "Set": "80",
+            "Description": " "
+        }
+    },
+    "Metrics": {
+        "ConfusionMatrix": {
+            "TrueNegatives": "24",
+            "FalseNegatives": "3",
+            "TruePositives": "42",
+            "FalsePositives": "11"
+        },
+        "Accuracy": {
+            "ClassificationAccuracy": "82.5%",
+            "Precision": "79.2%",
+            "Recall": "93.3%"
+        }
+    },
+    "Input": [
+        {
+            "FileName": "Image",
+            "Type": ".jpg,.png",
+            "MaxSize": "50M",
+            "Description": "Images must be RBG, this image can have dimensions up to 1234x1234 pixels"
+        }
+    ],
+    "Output": [
+        {
+            "FileName": "Result",
+            "Type": ".json",
+            "MaxSize": "10M",
+            "Description": "Contains the subfamily, species, origin, prediction probability of the squirrel "
+        }
+    ]
+}
